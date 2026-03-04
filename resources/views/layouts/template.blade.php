@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -23,23 +23,37 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('layouts.sidebar')
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-    <!-- Content Wrapper. Contains page content -->
+        <!-- Brand Logo -->
+        <a href="{{ url('/') }}" class="brand-link">
+            <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png') }}" 
+                 alt="AdminLTE Logo" 
+                 class="brand-image img-circle elevation-3" 
+                 style="opacity:.8">
+            <span class="brand-text font-weight-light">PWL - Starter Code</span>
+        </a>
+
+        <!-- Sidebar -->
+        @include('layouts.sidebar')
+        <!-- /.sidebar -->
+
+    </aside>
+
+    <!-- Content Wrapper -->
     <div class="content-wrapper">
 
-        <!-- Content Header (Page header) -->
+        <!-- Breadcrumb -->
         @include('layouts.breadcrumb')
 
         <!-- Main content -->
         <section class="content">
             @yield('content')
         </section>
-        <!-- /.content -->
 
     </div>
-    <!-- /.content-wrapper -->
 
+    <!-- Footer -->
     @include('layouts.footer')
 
 </div>
